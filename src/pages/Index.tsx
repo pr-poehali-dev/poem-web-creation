@@ -77,6 +77,17 @@ const Index = () => {
   ];
 
   useEffect(() => {
+    const audio = new Audio('https://cdn.poehali.dev/files/yahochupicachu-pokayus.mp3');
+    audio.loop = true;
+    audio.volume = 0.3;
+    
+    const playAudio = () => {
+      audio.play().catch(err => console.log('Автовоспроизведение заблокировано:', err));
+    };
+
+    playAudio();
+    document.addEventListener('click', playAudio, { once: true });
+
     const createHeart = () => {
       const heart = document.createElement('div');
       heart.innerHTML = '💖';
@@ -93,7 +104,12 @@ const Index = () => {
     };
 
     const interval = setInterval(createHeart, 400);
-    return () => clearInterval(interval);
+    
+    return () => {
+      clearInterval(interval);
+      audio.pause();
+      audio.src = '';
+    };
   }, []);
 
   return (
