@@ -82,11 +82,11 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFFAF0] via-[#F5DEB3] to-[#D2B48C]">
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF0F5] via-[#FFE4E9] to-[#FFB6C8]">
       <div className="container mx-auto px-4 py-12">
         <header className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
-            <Icon name="Feather" className="text-primary mr-3" size={48} />
+            <span className="text-primary mr-3 text-5xl">🌿</span>
             <h1 className="text-6xl font-bold text-primary">Поэтический Архив</h1>
           </div>
           <p className="text-xl text-muted-foreground italic">Собрание стихов и воспоминаний</p>
@@ -114,13 +114,13 @@ const Index = () => {
             {poems.map((poem) => (
               <Card 
                 key={poem.id} 
-                className="border-4 border-primary/30 bg-[#FFFAF0] shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2"
+                className="border-4 border-primary/30 bg-[#FFF5F7] shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2"
               >
                 <CardContent className="p-8">
                   <div className="text-center mb-6 pb-4 border-b-2 border-primary/20">
                     <div className="flex justify-center mb-3">
                       <div className="w-16 h-1 bg-primary/40"></div>
-                      <Icon name="Sparkles" className="mx-2 text-primary" size={20} />
+                      <span className="mx-2 text-primary text-lg">🌿</span>
                       <div className="w-16 h-1 bg-primary/40"></div>
                     </div>
                     <h3 className="text-2xl font-bold text-primary mb-2 font-['Playfair_Display']">
@@ -136,7 +136,7 @@ const Index = () => {
 
                   <div className="flex justify-center">
                     <div className="w-16 h-1 bg-primary/40"></div>
-                    <Icon name="BookOpen" className="mx-2 text-primary" size={20} />
+                    <span className="mx-2 text-primary text-lg">🍃</span>
                     <div className="w-16 h-1 bg-primary/40"></div>
                   </div>
                 </CardContent>
@@ -150,7 +150,7 @@ const Index = () => {
             {galleryImages.map((image) => (
               <Card 
                 key={image.id} 
-                className="border-4 border-primary/30 bg-[#FFFAF0] overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="border-4 border-primary/30 bg-[#FFF5F7] overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
                 <img 
                   src={image.url} 
@@ -160,7 +160,7 @@ const Index = () => {
                 <CardContent className="p-6 text-center">
                   <div className="flex justify-center mb-2">
                     <div className="w-12 h-px bg-primary/40"></div>
-                    <Icon name="Camera" className="mx-2 text-primary" size={16} />
+                    <span className="mx-2 text-primary">🌿</span>
                     <div className="w-12 h-px bg-primary/40"></div>
                   </div>
                   <h4 className="font-bold text-primary font-['Playfair_Display']">{image.title}</h4>
@@ -174,7 +174,7 @@ const Index = () => {
         <footer className="mt-20 text-center pb-8">
           <div className="flex justify-center items-center mb-4">
             <div className="w-32 h-px bg-primary/30"></div>
-            <Icon name="Scroll" className="mx-4 text-primary" size={32} />
+            <span className="mx-4 text-primary text-3xl">🍃</span>
             <div className="w-32 h-px bg-primary/30"></div>
           </div>
           <p className="text-muted-foreground italic font-['Playfair_Display']">
