@@ -77,7 +77,7 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    const audio = new Audio('https://cdn.poehali.dev/files/yahochupicachu-pokayus.mp3');
+    const audio = new Audio('https://disk.yandex.ru/d/kTX_3OOTWKOH8A/download');
     audio.loop = true;
     audio.volume = 0.3;
     
