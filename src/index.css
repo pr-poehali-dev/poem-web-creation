@@ -131,4 +131,40 @@
   .vintage-ornament::after {
     @apply -right-28;
   }
+
+  @keyframes float-heart {
+    0% {
+      transform: translateY(100vh) rotate(0deg) scale(0.8);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg) scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes sparkle {
+    0%,
+    100% {
+      filter: brightness(1) drop-shadow(0 0 2px rgba(255, 182, 200, 0.8));
+    }
+    50% {
+      filter: brightness(1.5) drop-shadow(0 0 8px rgba(255, 182, 200, 1));
+    }
+  }
+
+  .floating-heart {
+    position: fixed;
+    animation:
+      float-heart linear infinite,
+      sparkle 1.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 50;
+  }
 }

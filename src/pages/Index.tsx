@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -39,8 +39,28 @@ const Index = () => {
 
   const galleryImages: { id: number; url: string; title: string; year: string; }[] = [];
 
+  useEffect(() => {
+    const createHeart = () => {
+      const heart = document.createElement('div');
+      heart.innerHTML = '💖';
+      heart.className = 'floating-heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      heart.style.animationDelay = Math.random() * 2 + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    };
+
+    const interval = setInterval(createHeart, 400);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFF0F5] via-[#FFE4E9] to-[#FFB6C8]">
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF0F5] via-[#FFE4E9] to-[#FFB6C8] relative overflow-hidden">
       <div className="container mx-auto px-4 py-12">
         <header className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
