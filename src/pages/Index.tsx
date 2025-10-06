@@ -37,7 +37,38 @@ const Index = () => {
     }
   ];
 
-  const galleryImages: { id: number; url: string; title: string; year: string; }[] = [];
+  const galleryImages = [
+    {
+      id: 1,
+      url: 'https://cdn.poehali.dev/files/6f8a3858-c4aa-4b23-9ca0-ce8ad4f1517a.jpeg',
+      title: '',
+      year: ''
+    },
+    {
+      id: 2,
+      url: 'https://cdn.poehali.dev/files/c1e428bd-b8ec-4bb3-b66b-d3a281a48a81.jpeg',
+      title: '',
+      year: ''
+    },
+    {
+      id: 3,
+      url: 'https://cdn.poehali.dev/files/c3a8122e-7fcd-4f7e-87f4-fb3f972130b5.jpeg',
+      title: '',
+      year: ''
+    },
+    {
+      id: 4,
+      url: 'https://cdn.poehali.dev/files/3a7b3fca-946e-4a80-af08-7b4553f63f42.jpeg',
+      title: '',
+      year: ''
+    },
+    {
+      id: 5,
+      url: 'https://cdn.poehali.dev/files/60b03809-0c1c-4dce-a185-2416e1513cc8.jpeg',
+      title: '',
+      year: ''
+    }
+  ];
 
   useEffect(() => {
     const createHeart = () => {
@@ -124,8 +155,30 @@ const Index = () => {
         )}
 
         {activeSection === 'gallery' && (
-          <div className="flex justify-center items-center min-h-[400px]">
-            <p className="text-2xl text-muted-foreground italic font-['Playfair_Display']">Галерея пуста</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {galleryImages.map((image) => (
+              <Card 
+                key={image.id} 
+                className="border-4 border-primary/30 bg-[#FFF5F7] overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <img 
+                  src={image.url} 
+                  alt={image.title || `Фото ${image.id}`}
+                  className="w-full h-80 object-cover"
+                />
+                {(image.title || image.year) && (
+                  <CardContent className="p-6 text-center">
+                    <div className="flex justify-center mb-2">
+                      <div className="w-12 h-px bg-primary/40"></div>
+                      <span className="mx-2 text-primary">🌿</span>
+                      <div className="w-12 h-px bg-primary/40"></div>
+                    </div>
+                    {image.title && <h4 className="font-bold text-primary font-['Playfair_Display']">{image.title}</h4>}
+                    {image.year && <p className="text-sm text-muted-foreground">({image.year})</p>}
+                  </CardContent>
+                )}
+              </Card>
+            ))}
           </div>
         )}
 
