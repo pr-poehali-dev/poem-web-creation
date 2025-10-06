@@ -102,7 +102,7 @@ const Index = () => {
         <header className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
             <span className="text-primary mr-3 text-5xl">🌿</span>
-            <h1 className="text-6xl font-bold text-primary">Поэтический Архив</h1>
+            <h1 className="text-6xl font-bold text-primary">Ду Ю Эмо Скул</h1>
           </div>
           <p className="text-xl text-muted-foreground italic">Собрание стихов и воспоминаний</p>
         </header>
