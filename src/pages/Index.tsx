@@ -67,6 +67,12 @@ const Index = () => {
       url: 'https://cdn.poehali.dev/files/60b03809-0c1c-4dce-a185-2416e1513cc8.jpeg',
       title: '',
       year: ''
+    },
+    {
+      id: 6,
+      url: 'https://cdn.poehali.dev/files/0dd34f6d-5f35-4e09-a782-7e77ab834433.jpeg',
+      title: '',
+      year: ''
     }
   ];
 
